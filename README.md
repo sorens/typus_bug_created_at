@@ -428,3 +428,5 @@ Now, you can run `rails s` locally and go to http://0.0.0.0.:3000/admin/foo
     Rendered .rvm/gems/ruby-1.8.7-p299/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.5ms)
     
 note: slightly edited to remove extraneous path info that make it less confusing (hopefully)
+
+In case it is relevant, the heroku instance is at: http://morning-sky-193.heroku.com/admin/foos/
