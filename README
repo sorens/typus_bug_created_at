@@ -1,256 +1,431 @@
-== Welcome to Rails
 
-Rails is a web-application framework that includes everything needed to create
-database-backed web applications according to the Model-View-Control pattern.
+Create the initial rails application
 
-This pattern splits the view (also called the presentation) into "dumb"
-templates that are primarily responsible for inserting pre-built data in between
-HTML tags. The model contains the "smart" domain objects (such as Account,
-Product, Person, Post) that holds all the business logic and knows how to
-persist themselves to a database. The controller handles the incoming requests
-(such as Save New Account, Update Product, Show Post) by manipulating the model
-and directing data to the view.
+    > rails new typus1
 
-In Rails, the model is handled by what's called an object-relational mapping
-layer entitled Active Record. This layer allows you to present the data from
-database rows as objects and embellish these data objects with business logic
-methods. You can read more about Active Record in
-link:files/vendor/rails/activerecord/README.html.
+      create  
+      create  README
+      create  Rakefile
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+      create  app
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/mailers
+      create  app/models
+      create  app/views/layouts/application.html.erb
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/secret_token.rb
+      create  config/initializers/session_store.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  doc
+      create  doc/README_FOR_APP
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.gitkeep
+      create  log
+      create  log/server.log
+      create  log/production.log
+      create  log/development.log
+      create  log/test.log
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/favicon.ico
+      create  public/index.html
+      create  public/robots.txt
+      create  public/images
+      create  public/images/rails.png
+      create  public/stylesheets
+      create  public/stylesheets/.gitkeep
+      create  public/javascripts
+      create  public/javascripts/application.js
+      create  public/javascripts/controls.js
+      create  public/javascripts/dragdrop.js
+      create  public/javascripts/effects.js
+      create  public/javascripts/prototype.js
+      create  public/javascripts/rails.js
+      create  script
+      create  script/rails
+      create  test
+      create  test/fixtures
+      create  test/functional
+      create  test/integration
+      create  test/performance/browsing_test.rb
+      create  test/test_helper.rb
+      create  test/unit
+      create  tmp
+      create  tmp/sessions
+      create  tmp/sockets
+      create  tmp/cache
+      create  tmp/pids
+      create  vendor/plugins
+      create  vendor/plugins/.gitkeep
+      
+Change directory into the new rails app and run `bundle install`.     
 
-The controller and view are handled by the Action Pack, which handles both
-layers by its two parts: Action View and Action Controller. These two layers
-are bundled in a single package due to their heavy interdependence. This is
-unlike the relationship between the Active Record and Action Pack that is much
-more separate. Each of these packages can be used independently outside of
-Rails. You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
+    cd typus1
+
+    > bundle install
+    Updating git://github.com/fesplugas/typus.git
+    Fetching source index for http://rubygems.org/
+    Using rake (0.8.7) 
+    Using abstract (1.0.0) 
+    Using activesupport (3.0.5) 
+    Using builder (2.1.2) 
+    Using i18n (0.5.0) 
+    Using activemodel (3.0.5) 
+    Using erubis (2.6.6) 
+    Using rack (1.2.2) 
+    Using rack-mount (0.6.14) 
+    Using rack-test (0.5.7) 
+    Using tzinfo (0.3.25) 
+    Using actionpack (3.0.5) 
+    Using mime-types (1.16) 
+    Using polyglot (0.3.1) 
+    Using treetop (1.4.9) 
+    Using mail (2.2.15) 
+    Using actionmailer (3.0.5) 
+    Using arel (2.0.9) 
+    Using activerecord (3.0.5) 
+    Using activeresource (3.0.5) 
+    Using bcrypt-ruby (2.1.4) 
+    Using bundler (1.0.10) 
+    Using fastercsv (1.5.4) 
+    Using thor (0.14.6) 
+    Using railties (3.0.5) 
+    Using rails (3.0.5) 
+    Using render_inheritable (1.0.0) 
+    Using sqlite3 (1.3.3) 
+    Using will_paginate (3.0.pre2) 
+    Using typus (3.0.10) from git://github.com/fesplugas/typus.git (at master) 
+    Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+Generate the typus files.
+
+    > rails g typus
+    
+      create  config/initializers/typus.rb
+      create  config/initializers/typus_resources.rb
+       exist  public
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_222222_256x240.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_228ef1_256x240.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_ef8c08_256x240.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_ffd27a_256x240.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_ffffff_256x240.png
+      create  public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css
+      create  public/vendor/jquery-ui-1.8.9.custom/js/jquery-1.4.4.min.js
+      create  public/vendor/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/blank.gif
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_close.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_loading.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_nav_left.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_nav_right.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_e.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_n.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_ne.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_nw.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_s.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_se.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_sw.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_w.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_title_left.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_title_main.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_title_over.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_title_right.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancybox-x.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancybox-y.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/fancybox.png
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js
+      create  public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js
+      create  public/vendor/typus/javascripts/application.js
+      create  public/vendor/typus/javascripts/jquery.application.js
+      create  public/vendor/typus/javascripts/jquery.rails.autocomplete.js
+      create  public/vendor/typus/javascripts/jquery.rails.js
+      create  public/vendor/typus/javascripts/jquery.searchField.js
+      create  public/vendor/typus/stylesheets/application.css
+      create  public/vendor/typus/stylesheets/reset.css
+      create  public/vendor/typus/stylesheets/screen.css
+      create  app/controllers/admin/foos_controller.rb
+      invoke  test_unit
+      create    test/functional/admin/foos_controller_test.rb
+      create  config/typus/README
+      create  config/typus/20110504161759_application.yml
+      create  config/typus/20110504161759_application_roles.yml
+
+Create a simple model with a field.
+
+      > rails g model Foo bar:string
+      
+      invoke  active_record
+      create    db/migrate/20110504161536_create_foos.rb
+      create    app/models/foo.rb
+      invoke    test_unit
+      create      test/unit/foo_test.rb
+      create      test/fixtures/foos.yml
+
+Now, push it to git...
+
+     > git init
+    Initialized empty Git repository in typus1/.git/
+    > git add .
+    > git commit -m "first"
+    [master (root-commit) 060bcb0] first
+     102 files changed, 14415 insertions(+), 0 deletions(-)
+     create mode 100644 .gitignore
+     create mode 100644 Gemfile
+     create mode 100644 Gemfile.lock
+     create mode 100644 README
+     create mode 100644 Rakefile
+     create mode 100644 app/controllers/admin/foos_controller.rb
+     create mode 100644 app/controllers/application_controller.rb
+     create mode 100644 app/helpers/application_helper.rb
+     create mode 100644 app/models/foo.rb
+     create mode 100644 app/views/layouts/application.html.erb
+     create mode 100644 config.ru
+     create mode 100644 config/application.rb
+     create mode 100644 config/boot.rb
+     create mode 100644 config/database.yml
+     create mode 100644 config/environment.rb
+     create mode 100644 config/environments/development.rb
+     create mode 100644 config/environments/production.rb
+     create mode 100644 config/environments/test.rb
+     create mode 100644 config/initializers/backtrace_silencers.rb
+     create mode 100644 config/initializers/inflections.rb
+     create mode 100644 config/initializers/mime_types.rb
+     create mode 100644 config/initializers/secret_token.rb
+     create mode 100644 config/initializers/session_store.rb
+     create mode 100644 config/initializers/typus.rb
+     create mode 100644 config/initializers/typus_resources.rb
+     create mode 100644 config/locales/en.yml
+     create mode 100644 config/routes.rb
+     create mode 100644 config/typus/20110504161759_application.yml
+     create mode 100644 config/typus/20110504161759_application_roles.yml
+     create mode 100644 config/typus/README
+     create mode 100644 db/migrate/20110504161536_create_foos.rb
+     create mode 100644 db/schema.rb
+     create mode 100644 db/seeds.rb
+     create mode 100644 doc/README_FOR_APP
+     create mode 100644 lib/tasks/.gitkeep
+     create mode 100644 public/404.html
+     create mode 100644 public/422.html
+     create mode 100644 public/500.html
+     create mode 100644 public/favicon.ico
+     create mode 100644 public/images/rails.png
+     create mode 100644 public/index.html
+     create mode 100644 public/javascripts/application.js
+     create mode 100644 public/javascripts/controls.js
+     create mode 100644 public/javascripts/dragdrop.js
+     create mode 100644 public/javascripts/effects.js
+     create mode 100644 public/javascripts/prototype.js
+     create mode 100644 public/javascripts/rails.js
+     create mode 100644 public/robots.txt
+     create mode 100644 public/stylesheets/.gitkeep
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_222222_256x240.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_228ef1_256x240.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_ef8c08_256x240.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_ffd27a_256x240.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/images/ui-icons_ffffff_256x240.png
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/js/jquery-1.4.4.min.js
+     create mode 100644 public/vendor/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/blank.gif
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_close.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_loading.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_nav_left.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_nav_right.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_e.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_n.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_ne.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_nw.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_s.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_se.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_sw.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_shadow_w.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_title_left.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_title_main.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_title_over.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancy_title_right.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancybox-x.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancybox-y.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/fancybox.png
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js
+     create mode 100644 public/vendor/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js
+     create mode 100644 public/vendor/typus/javascripts/application.js
+     create mode 100644 public/vendor/typus/javascripts/jquery.application.js
+     create mode 100644 public/vendor/typus/javascripts/jquery.rails.autocomplete.js
+     create mode 100644 public/vendor/typus/javascripts/jquery.rails.js
+     create mode 100644 public/vendor/typus/javascripts/jquery.searchField.js
+     create mode 100644 public/vendor/typus/stylesheets/application.css
+     create mode 100644 public/vendor/typus/stylesheets/reset.css
+     create mode 100644 public/vendor/typus/stylesheets/screen.css
+     create mode 100755 script/rails
+     create mode 100644 test/fixtures/foos.yml
+     create mode 100644 test/functional/admin/foos_controller_test.rb
+     create mode 100644 test/performance/browsing_test.rb
+     create mode 100644 test/test_helper.rb
+     create mode 100644 test/unit/foo_test.rb
+     create mode 100644 vendor/plugins/.gitkeep
+
+Setup a Heroku instance.
+
+     > heroku create
+     Creating morning-sky-193.... done
+     http://morning-sky-193.heroku.com/ | git@heroku.com:morning-sky-193.git
+     Git remote heroku added
+
+Push it to heroku.
+
+     > git push heroku master
+    Counting objects: 144, done.
+    Delta compression using up to 2 threads.
+    Compressing objects: 100% (121/121), done.
+    Writing objects: 100% (144/144), 249.30 KiB, done.
+    Total 144 (delta 5), reused 0 (delta 0)
+
+    -----> Heroku receiving push
+    -----> Rails app detected
+    -----> Detected Rails is not set to serve static_assets
+           Installing rails3_serve_static_assets... done
+    -----> Configure Rails 3 to disable x-sendfile
+           Installing rails3_disable_x_sendfile... done
+    -----> Configure Rails to log to stdout
+           Installing rails_log_stdout... done
+    -----> Gemfile detected, running Bundler version 1.0.7
+           Unresolved dependencies detected; Installing...
+           Using --without development:test
+           Fetching source index for http://rubygems.org/
+           Fetching git://github.com/fesplugas/typus.git
+           Installing rake (0.8.7) 
+           Installing abstract (1.0.0) 
+           Installing activesupport (3.0.5) 
+           Installing builder (2.1.2) 
+           Installing i18n (0.5.0) 
+           Installing activemodel (3.0.5) 
+           Installing erubis (2.6.6) 
+           Installing rack (1.2.2) 
+           Installing rack-mount (0.6.14) 
+           Installing rack-test (0.5.7) 
+           Installing tzinfo (0.3.25) 
+           Installing actionpack (3.0.5) 
+           Installing mime-types (1.16) 
+           Installing polyglot (0.3.1) 
+           Installing treetop (1.4.9) 
+           Installing mail (2.2.15) 
+           Installing actionmailer (3.0.5) 
+           Installing arel (2.0.9) 
+           Installing activerecord (3.0.5) 
+           Installing activeresource (3.0.5) 
+           Installing bcrypt-ruby (2.1.4) with native extensions 
+           Installing fastercsv (1.5.4) 
+           Using bundler (1.0.7) 
+           Installing thor (0.14.6) 
+           Installing railties (3.0.5) 
+           Installing rails (3.0.5) 
+           Installing render_inheritable (1.0.0) 
+           Installing sqlite3 (1.3.3) with native extensions 
+           Installing will_paginate (3.0.pre2) 
+           Using typus (3.0.10) from git://github.com/fesplugas/typus.git (at master) 
+           Your bundle is complete! It was installed into ./.bundle/gems/
+           Compiled slug size is 10.2MB
+    -----> Launching... done
+           http://morning-sky-193.heroku.com deployed to Heroku
+
+           To git@heroku.com:morning-sky-193.git
+           * [new branch]      master -> master
+           
+Once you create and startup the application on Heroku, you need to use Typus to create a new `foo`
+and enter a string into the `bar` field. Once it's created, you can then use `heroku db:pull` to
+bring the database down to your development environment
+           
+    heroku db:pull --confirm morning-sky-193
+    Receiving schema
+    Schema:        100% |==========================================| Time: 00:00:03
+    Receiving indexes
+    schema_migrat: 100% |==========================================| Time: 00:00:00
+    Receiving data
+    2 tables, 400 records
+    schema_migrat: 100% |==========================================| Time: 00:00:00
+    foos:          100% |==========================================| Time: 00:00:00
+    Resetting sequences
+    
+Now, you can run `rails s` locally and go to http://0.0.0.0.:3000/admin/foo
+
+    > rails s
+    
+    => Booting WEBrick
+    => Rails 3.0.5 application starting in development on http://0.0.0.0:3000
+    => Call with -d to detach
+    => Ctrl-C to shutdown server
+    [2011-05-04 09:25:17] INFO  WEBrick 1.3.1
+    [2011-05-04 09:25:17] INFO  ruby 1.8.7 (2010-06-23) [i686-darwin10.4.0]
+    [2011-05-04 09:25:17] INFO  WEBrick::HTTPServer#start: pid=30420 port=3000
 
 
-== Getting Started
+    Started GET "/admin/foos" for 127.0.0.1 at Wed May 04 09:25:25 -0700 2011
+      Processing by Admin::FoosController#index as HTML
+      Foo Load (0.2ms)  SELECT "foos".* FROM "foos" LIMIT 15 OFFSET 0
+    Rendered .rvm/gems/ruby-1.8.7-p299/bundler/gems/typus-a281aaeb4258/app/views/admin/helpers/sidebar/_sidebar.html.erb (1.3ms)
+    Rendered .rvm/gems/ruby-1.8.7-p299/bundler/gems/typus-a281aaeb4258/app/views/admin/resources/_index.html.erb (0.3ms)
+      SQL (0.2ms)  SELECT COUNT(*) FROM "foos"
+      Foo Load (0.2ms)  SELECT "foos".* FROM "foos"
+    Rendered .rvm/gems/ruby-1.8.7-p299/bundler/gems/typus-a281aaeb4258/app/views/admin/resources/index.html.erb within layouts/admin/base (21.8ms)
+    Completed   in 58ms
 
-1. At the command prompt, create a new Rails application:
-       <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)
+    ActionView::Template::Error (undefined method `created_at' for #<ActiveRecord::Relation:0x103638c20>):
+        22:   <% end %>
+        23: </ul>
+        24: 
+        25: <% if (build_filters || search) %>
+        26:   <div class="filters">
+        27:     <%= build_filters %>
+        28:     <%= search %>
+  
 
-2. Change directory to <tt>myapp</tt> and start the web server:
-       <tt>cd myapp; rails server</tt> (run with --help for options)
-
-3. Go to http://localhost:3000/ and you'll see:
-       "Welcome aboard: You're riding Ruby on Rails!"
-
-4. Follow the guidelines to start developing your application. You can find
-the following resources handy:
-
-* The Getting Started Guide: http://guides.rubyonrails.org/getting_started.html
-* Ruby on Rails Tutorial Book: http://www.railstutorial.org/
-
-
-== Debugging Rails
-
-Sometimes your application goes wrong. Fortunately there are a lot of tools that
-will help you debug it and get it back on the rails.
-
-First area to check is the application log files. Have "tail -f" commands
-running on the server.log and development.log. Rails will automatically display
-debugging and runtime information to these files. Debugging info will also be
-shown in the browser on requests from 127.0.0.1.
-
-You can also log your own messages directly into the log file from your code
-using the Ruby logger class from inside your controllers. Example:
-
-  class WeblogController < ActionController::Base
-    def destroy
-      @weblog = Weblog.find(params[:id])
-      @weblog.destroy
-      logger.info("#{Time.now} Destroyed Weblog ID ##{@weblog.id}!")
-    end
-  end
-
-The result will be a message in your log file along the lines of:
-
-  Mon Oct 08 14:22:29 +1000 2007 Destroyed Weblog ID #1!
-
-More information on how to use the logger is at http://www.ruby-doc.org/core/
-
-Also, Ruby documentation can be found at http://www.ruby-lang.org/. There are
-several books available online as well:
-
-* Programming Ruby: http://www.ruby-doc.org/docs/ProgrammingRuby/ (Pickaxe)
-* Learn to Program: http://pine.fm/LearnToProgram/ (a beginners guide)
-
-These two books will bring you up to speed on the Ruby language and also on
-programming in general.
-
-
-== Debugger
-
-Debugger support is available through the debugger command when you start your
-Mongrel or WEBrick server with --debugger. This means that you can break out of
-execution at any point in the code, investigate and change the model, and then,
-resume execution! You need to install ruby-debug to run the server in debugging
-mode. With gems, use <tt>sudo gem install ruby-debug</tt>. Example:
-
-  class WeblogController < ActionController::Base
-    def index
-      @posts = Post.find(:all)
-      debugger
-    end
-  end
-
-So the controller will accept the action, run the first line, then present you
-with a IRB prompt in the server window. Here you can do things like:
-
-  >> @posts.inspect
-  => "[#<Post:0x14a6be8
-          @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>,
-       #<Post:0x14a6620
-          @attributes={"title"=>"Rails", "body"=>"Only ten..", "id"=>"2"}>]"
-  >> @posts.first.title = "hello from a debugger"
-  => "hello from a debugger"
-
-...and even better, you can examine how your runtime objects actually work:
-
-  >> f = @posts.first
-  => #<Post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
-  >> f.
-  Display all 152 possibilities? (y or n)
-
-Finally, when you're ready to resume execution, you can enter "cont".
-
-
-== Console
-
-The console is a Ruby shell, which allows you to interact with your
-application's domain model. Here you'll have all parts of the application
-configured, just like it is when the application is running. You can inspect
-domain models, change values, and save to the database. Starting the script
-without arguments will launch it in the development environment.
-
-To start the console, run <tt>rails console</tt> from the application
-directory.
-
-Options:
-
-* Passing the <tt>-s, --sandbox</tt> argument will rollback any modifications
-  made to the database.
-* Passing an environment name as an argument will load the corresponding
-  environment. Example: <tt>rails console production</tt>.
-
-To reload your controllers and models after launching the console run
-<tt>reload!</tt>
-
-More information about irb can be found at:
-link:http://www.rubycentral.com/pickaxe/irb.html
-
-
-== dbconsole
-
-You can go to the command line of your database directly through <tt>rails
-dbconsole</tt>. You would be connected to the database with the credentials
-defined in database.yml. Starting the script without arguments will connect you
-to the development database. Passing an argument will connect you to a different
-database, like <tt>rails dbconsole production</tt>. Currently works for MySQL,
-PostgreSQL and SQLite 3.
-
-== Description of Contents
-
-The default directory structure of a generated Ruby on Rails application:
-
-  |-- app
-  |   |-- controllers
-  |   |-- helpers
-  |   |-- mailers
-  |   |-- models
-  |   `-- views
-  |       `-- layouts
-  |-- config
-  |   |-- environments
-  |   |-- initializers
-  |   `-- locales
-  |-- db
-  |-- doc
-  |-- lib
-  |   `-- tasks
-  |-- log
-  |-- public
-  |   |-- images
-  |   |-- javascripts
-  |   `-- stylesheets
-  |-- script
-  |-- test
-  |   |-- fixtures
-  |   |-- functional
-  |   |-- integration
-  |   |-- performance
-  |   `-- unit
-  |-- tmp
-  |   |-- cache
-  |   |-- pids
-  |   |-- sessions
-  |   `-- sockets
-  `-- vendor
-      `-- plugins
-
-app
-  Holds all the code that's specific to this particular application.
-
-app/controllers
-  Holds controllers that should be named like weblogs_controller.rb for
-  automated URL mapping. All controllers should descend from
-  ApplicationController which itself descends from ActionController::Base.
-
-app/models
-  Holds models that should be named like post.rb. Models descend from
-  ActiveRecord::Base by default.
-
-app/views
-  Holds the template files for the view that should be named like
-  weblogs/index.html.erb for the WeblogsController#index action. All views use
-  eRuby syntax by default.
-
-app/views/layouts
-  Holds the template files for layouts to be used with views. This models the
-  common header/footer method of wrapping views. In your views, define a layout
-  using the <tt>layout :default</tt> and create a file named default.html.erb.
-  Inside default.html.erb, call <% yield %> to render the view using this
-  layout.
-
-app/helpers
-  Holds view helpers that should be named like weblogs_helper.rb. These are
-  generated for you automatically when using generators for controllers.
-  Helpers can be used to wrap functionality for your views into methods.
-
-config
-  Configuration files for the Rails environment, the routing map, the database,
-  and other dependencies.
-
-db
-  Contains the database schema in schema.rb. db/migrate contains all the
-  sequence of Migrations for your schema.
-
-doc
-  This directory is where your application documentation will be stored when
-  generated using <tt>rake doc:app</tt>
-
-lib
-  Application specific libraries. Basically, any kind of custom code that
-  doesn't belong under controllers, models, or helpers. This directory is in
-  the load path.
-
-public
-  The directory available for the web server. Contains subdirectories for
-  images, stylesheets, and javascripts. Also contains the dispatchers and the
-  default HTML files. This should be set as the DOCUMENT_ROOT of your web
-  server.
-
-script
-  Helper scripts for automation and generation.
-
-test
-  Unit and functional tests along with fixtures. When using the rails generate
-  command, template test files will be generated for you and placed in this
-  directory.
-
-vendor
-  External libraries that the application depends on. Also includes the plugins
-  subdirectory. If the app has frozen rails, those gems also go here, under
-  vendor/rails/. This directory is in the load path.
+    Rendered .rvm/gems/ruby-1.8.7-p299/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+    Rendered .rvm/gems/ruby-1.8.7-p299/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.6ms)
+    Rendered .rvm/gems/ruby-1.8.7-p299/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.5ms)
+    
+note: slightly edited to remove extraneous path info that make it less confusing (hopefully)
