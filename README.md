@@ -374,7 +374,9 @@ Push it to heroku.
 
            To git@heroku.com:morning-sky-193.git
            * [new branch]      master -> master
-           
+
+Make sure you to migrate your DB: `heroku rake db:migrate`
+
 Once you create and startup the application on Heroku, you need to use Typus to create a new `foo`
 and enter a string into the `bar` field. Once it's created, you can then use `heroku db:pull` to
 bring the database down to your development environment
